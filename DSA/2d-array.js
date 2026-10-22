@@ -8,7 +8,7 @@ function getIndividualHourGlassSum(arr, r, c) {
 
     for (let i = r; i < r + 3; i++) {
         for (let j = c; j < c + 3; j++) {
-            if (skipIndices.has(`i-j`)) continue;
+            if (skipIndices.has(`${i}-${j}`)) continue;
             currSum += arr[i][j];
         }
     }
@@ -27,8 +27,6 @@ function hourglassSum(arr) {
     let max = -Infinity;
     const ROW = arr.length - 2;
     const COL = arr[0].length - 2;
-    alert("haha");
-    debugger;
     for (let r = 0; r < ROW; r++) {
         for (let c = 0; c < COL; c++) {
             max = Math.max(max, getIndividualHourGlassSum(arr, r,c));
